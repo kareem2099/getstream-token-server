@@ -13,7 +13,7 @@ if (!process.env.STREAM_API_KEY || !process.env.STREAM_API_SECRET || !process.en
 
 // Initialize the Express app
 const app = express();
-const port = process.env.PORT || 3004;
+const port = process.env.PORT || 3005;
 
 // Stream Chat client initialization
 let serverClient;
@@ -54,27 +54,6 @@ const verifyJWT = (req, res, next) => {
         next();
     });
 };
-
-// Endpoint to assign role to a user
-app.post('/assign-role', verifyJWT, (req, res, next) => {
-    const { userId, role } = req.body;
-
-    if (!userId || !role) {
-        return res.status(400).json({ error: 'User ID and role are required' });
-    }
-
-    const user = {
-        id: userId,
-        role: role,
-    };
-
-    serverClient.upsertUser(user).then(() => {
-        res.json({ message: 'Role assigned successfully' });
-    }).catch((error) => {
-        console.error('Error assigning role:', error);
-        res.status(500).json({ error: 'Failed to assign role' });
-    });
-});
 
 // Token generation route
 app.get('/token', (req, res, next) => {

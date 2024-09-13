@@ -14,6 +14,14 @@
     {
       "src": "/generate-api-key",
       "dest": "/index.js"
+    },
+    {
+      "src": "/assign-role",
+      "dest": "/index.js"
+    },
+    {
+      "src": "/debug-env",
+      "dest": "/index.js"
     }
   ]
 }

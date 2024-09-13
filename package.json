@@ -16,6 +16,7 @@
     "express-rate-limit": "^7.4.0",
     "helmet": "^7.1.0",
     "jsonwebtoken": "^9.0.2",
-    "stream-chat": "^8.40.5"
+    "stream-chat": "^8.40.6",
+    "axios": "^1.7.7"
   }
 }
